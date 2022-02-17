@@ -1,0 +1,49 @@
+This ERD diagram represents a Database for All Football Clubs in a certain europeen country and will be used to keep track
+of all players and coaches in the Club's teams and the agent of all the players.
+
+A club can have multiple teams that each play in different leagues and tounaments. Each team has multiple players and coaches.
+Players have one agent but an agent can work with multiple players.
+
+Soccer Club
+
+Name (PK) STRING(50) Not NULL
+city STRING(25)
+
+Team
+
+Name (PK) STRING(50) Not NULL
+League STRING(50)
+SoccerCLubName (FK) STRING(50)
+
+Coach
+
+FirstName (PK) STRING(25) Not NULL 
+LastName (PK) STRING(50) Not NULL 
+role STRING(50) Not NULL
+salary INT Not NULL
+TeamName (FK) STRING(50)
+
+Player
+
+Number (PK) INT Not NULL
+FirstName  STRING(25) Not NULL 
+LastName  STRING(50) Not NULL 
+Position String(15) Not NULL
+Salary INT 
+TeamName (FK) STRING(50) Not NULL
+
+Agent 
+
+E-Mail (PK) STRING(50) Not NULL
+FirstName  STRING(25) Not NULL 
+LastName  STRING(50) Not NULL 
+
+Team/Tournament
+
+TeamName (PK,FK1) STRING(50) Not NULL
+TournamentName (PK,FK2) STRING(50) Not NULL
+
+Tournament
+
+Name (PK) STRING(50)
+PriceMoney INT
